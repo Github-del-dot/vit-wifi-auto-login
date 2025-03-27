@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "WiFi Auto Login",
+    "version": "1.0",
+    "description": "Automatically logs into college WiFi portal",
+    "permissions": ["scripting", "activeTab", "storage"],
+    "host_permissions": [
+      "http://phc.prontonetworks.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["http://phc.prontonetworks.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+    }
+  }
+  
